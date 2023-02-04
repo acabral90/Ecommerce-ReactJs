@@ -1,7 +1,7 @@
 import React from 'react';
 import react, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import obtenerProducto, { getProductosByCategory } from "../mockService.js";
+import { obtenerProductos, getProductsByCategory } from "../services/firebase";
 import Flex from './Flex/Flex';
 import Item from './Item/Item';
 
@@ -13,13 +13,13 @@ function ItemListContainer() {
     
     useEffect(() => {
         if(!categoryid){
-        obtenerProducto()
+        obtenerProductos()
             .then((respuesta) => {
                 setProductos(respuesta)
             })
             .catch((error) => alert(error));
         }else{
-            getProductosByCategory(categoryid)
+            getProductsByCategory(categoryid)
             .then((respuesta) =>{
                 setProductos(respuesta)
             })

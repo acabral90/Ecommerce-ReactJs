@@ -1,3 +1,5 @@
+
+
 const database = [
     {
         id: 1,
@@ -5,7 +7,7 @@ const database = [
         title: "Sustrato grow mix 80 litros", 
         price: 7500,
         stock: 16,
-        img: "jkxnsakjnx",
+        img: "/images/sustratoGrowmix80.jpg",
         description: "Sustrato profesional Terra Fertil grow mix multipro 80 litros. 100% orgánico.",
     },
     {
@@ -14,7 +16,7 @@ const database = [
         title: "Humus de lombriz Juani Juana 10 litros", 
         price: 3800,
         stock: 8,
-        img: "jjcdbsjcbsdj",
+        img: "/images/humus_de_lombriz.jpg",
         description: "Humus de lombriz 100% orgánico JuaniJuana 10 litros.",
     },
     {
@@ -23,7 +25,7 @@ const database = [
         title: "Panel led 300w",
         price: 25000,
         stock: 12,
-        img: "hddjsbcsdhjbcs",
+        img: "/images/panelLed300w.jpg",
         description: "Panel led 300w para cultivo indoor. Floración y crecimiento",
     },
     {
@@ -32,7 +34,7 @@ const database = [
         title: "Maceta geotextil Eden 10 litros.",
         price: 800,
         stock: 21,
-        img: "dkjscnksjcnsdkjcn",
+        img: "/images/maceta_geotextil_eden_10litros.jpg",
         description: "Maceta para cultivo de tela geotextil Eden 10 litros.",
     },
     {
@@ -41,7 +43,7 @@ const database = [
         title:  "Redutor PH Namaste 500ml.",
         price: 1015,
         stock: 9,
-        img: "uchdsbcjhsbdcjsdhbc",
+        img: "/images/reductor_ph_namaste.jpg",
         description: "Redcutor de PH Namaste a base de ácidos orgánicos 500ml.",
     },
     {
@@ -50,7 +52,7 @@ const database = [
         title: "Maceta root house 10 litros",
         price: 2200,
         stock: 13,
-        img: "chsdjcbhsdjbcjsdh",
+        img: "/images/Maceta root house 10L.jpg",
         description: "Maceta para cultivo inddor root house autopoda + plato",
     },
     {
@@ -59,7 +61,7 @@ const database = [
         title: "Tripack advanced nutrientes 500ml.",
         price: 11000,
         stock: 31,
-        img: "iduacisjcnksajcn",
+        img: "/images/packFertilizantesX3.jpg",
         description: "Pack x 3 fertilizantes grow, micro, bloom 500ml.",
     },
     {
@@ -68,7 +70,7 @@ const database = [
         title: "Nutripack Namaste",
         price: 8500,
         stock: 26,
-        img: "disjdnask",
+        img: "/images/Nutripack namaste.jpg",
         description: "Nutripack Namaste, kit orgánico completo",
     },
     {
@@ -77,7 +79,7 @@ const database = [
         title: "Lampara led cultivo indoor 50w",
         price: 3400,
         stock: 17,
-        img: "jdnkjcsnkjsncsd",
+        img: "/images/LamparaLed50w.webp",
         description: "Lampara led cultivo indoor 50w growing full spectrum",
     },
     {
@@ -86,7 +88,7 @@ const database = [
         title: "Sustrato Santa Planta super mix 50 litros",
         price: 4500,
         stock: 5,
-        img: "udshbcsdkjbcsdjkcbksd",
+        img: "/images/Sustrato santa planta super mix 50L.jpg",
         description: "Sustrato ligero profesional Santa Planta super mix indoor/outdoor",
     },
 ];
