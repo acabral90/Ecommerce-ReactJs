@@ -1,13 +1,21 @@
-import cart from "../cart4.svg";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { cartContext } from "../storage/cartContext";
 
 function CartWidget() {
-    return(
-        <li>
-            <a href="">
-                <img src={cart}/>
-            </a>
-        </li>
 
+    const {totalItemsInCart} = useContext(cartContext)
+
+
+
+    return(
+        <div>
+            <Link to={"/cart"}>
+                <img src="/images/cart4.svg" alt="carrito" />
+            </Link>
+            <span>{totalItemsInCart()}</span>
+        </div>    
+        
     );
 };
 

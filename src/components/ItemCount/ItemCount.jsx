@@ -16,9 +16,6 @@ function ItemCount({ onAddToCart, stock }) {
         setCount (count -1)
     }
 
-
-
-
   return (
     <div className='itemcount-container'>
         <h4>Agregá la cantidad deseada</h4>

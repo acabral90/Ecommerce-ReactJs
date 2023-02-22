@@ -10,7 +10,7 @@ function ItemDetail({
   price,
   description,
   img,
-  stock
+  stockUpdate
   
 }) {
   
@@ -26,7 +26,7 @@ function ItemDetail({
             <h4 className='card-detail-price'>${price}</h4>
         </div>
 
-        <ItemCount stock={stock} onAddToCart={onAddToCart}/>
+        <ItemCount stock={stockUpdate} onAddToCart={onAddToCart}/>
     </div>
   )
 }

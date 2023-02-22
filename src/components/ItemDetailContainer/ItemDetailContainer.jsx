@@ -30,6 +30,17 @@ function ItemDetailConteiner() {
         });
     },[]);
 
+    function checkStock() {
+      let itemInCart = cart.find((item) => item.id === productos.id);
+  
+      let stockUpdated = productos.stock;
+  
+      if (itemInCart) {
+        stockUpdated = productos.stock - itemInCart.count;
+      }
+      return stockUpdated;
+    }
+
   return (
     <div className='itemDetailContainer'>
     <ItemDetail
@@ -39,7 +50,7 @@ function ItemDetailConteiner() {
      price={productos.price}
      description={productos.description}
      img={productos.img}
-     stock={productos.stock}
+     stockUpdate={checkStock()}
      />
      </div>
     

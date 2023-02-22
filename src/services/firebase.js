@@ -9,6 +9,8 @@ import {
     where,
     orderBy,
     addDoc,
+    writeBatch,
+    documentId
 } from  "firebase/firestore";
 
 const firebaseConfig = {
@@ -172,6 +174,40 @@ export async function exportArray(){
       console.log("item creado: ", respuesta.id));
     }
   
+}
+
+export async function createOrder_WithStockControl(order) {
+    const orderRef = collection(db, "orders");
+    const productsRef = collection(db, "products");
+    const batch = writeBatch(db);
+    const arrayIds = order.items.map((item) => item.id);
+    const q = query(productsRef, where(documentId(), "in", arrayIds));
+    const querySnapshot = await getDocs(q);
+    const docsToUpdate = querySnapshot.docs;
+    let itemsSinStock = [];
+    
+    docsToUpdate.forEach((doc) => {
+      let stock = doc.data().stock;
+      let itemInCart = order.items.find((item) => item.id === doc.id);
+      let countInCart = itemInCart.count;
+      let newStock = stock - countInCart;
+    
+      if (newStock < 0) {
+        itemsSinStock.push(doc.data().title);
+      } else {
+        batch.update(doc.ref, { stock: newStock });
+      }
+    });
+    
+    if (itemsSinStock.length >= 1)
+      throw new Error(
+        `Stock no disponible para el producto para los productos ${itemsSinStock}`
+      );
+    
+    await batch.commit();
+  
+    let newOrder = await addDoc(orderRef, order);
+    return newOrder.id;
 }
 
 
