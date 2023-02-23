@@ -1,15 +1,18 @@
 import React from 'react'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { cartContext } from '../../storage/cartContext'
-import CartContainer from '../CartContainer/CartContainer'
 
-function FinishCart({id}) {
+function FinishCart() {
 
     const {orderId, setOrderId} = useContext(cartContext)
 
-    console.log(id)
   return (
-    <h1>Gracias por tu compra el id de tu compra es {orderId} </h1>
+    <div>
+    <h1>Gracias por tu compra. El id de tu compra es {orderId} </h1>
+
+    <Link to={"/"} className="btn btn-success"> Volver al inicio </Link>
+    </div>
   )
 }
 

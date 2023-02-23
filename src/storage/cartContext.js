@@ -46,9 +46,17 @@ function CartProvider (props){
 
         return total 
     }
+
+    function clearCart(){
+
+        let newCart = []
+
+        setCart(newCart)
+
+    }
         
     return(
-        <cartContext.Provider value={{ cart, addToCart, removeItem, totalItemsInCart, totalPrice, orderId, setOrderId}}>
+        <cartContext.Provider value={{ cart, addToCart, removeItem, totalItemsInCart, totalPrice, orderId, setOrderId, clearCart}}>
             {props.children}
 
         </cartContext.Provider>

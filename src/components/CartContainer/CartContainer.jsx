@@ -11,7 +11,7 @@ function CartContainer() {
 
     
 
-    const {orderId, setOrderId, cart, removeItem, totalPrice} = useContext(cartContext)
+    const {orderId, setOrderId, cart, removeItem, totalPrice, clearCart} = useContext(cartContext)
 
     const navigateTo = useNavigate()
 
@@ -26,11 +26,7 @@ function CartContainer() {
       }));
   
       const order = {
-        buyer: {
-          name:"Alejandro",
-          email: "aomcabral@gmail.com",
-          phone: "1151219605"
-        },
+        buyer: userData,
         items: items, 
         total: totalPrice(),
         date: new Date(),
@@ -55,7 +51,8 @@ function CartContainer() {
 
       console.log(orderId)
 
-      
+      clearCart()
+
     }
 
 
